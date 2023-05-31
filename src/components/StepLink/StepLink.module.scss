@@ -1,0 +1,43 @@
+.stepLink {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #ffffff;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-weight: 700;
+    border: 1px solid #ffffff;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  &__title {
+    font-weight: 700;
+  }
+  &__subtitle {
+    font-size: 12px;
+    font-weight: 300;
+    opacity: 0.7;
+  }
+}
+
+.completed {
+  span {
+    border-color: #bee1ff;
+    background-color: #bee1ff;
+    color: #03295a;
+  }
+}
