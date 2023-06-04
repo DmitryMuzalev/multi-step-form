@@ -1,0 +1,9 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  button {
+    margin: 65px 0px 0px 0px;
+    align-self: end;
+  }
+}
