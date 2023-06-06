@@ -1,4 +1,5 @@
 import Button from '../../../components/Form/Button/Button';
+import Checkbox from '../../../components/Form/Checkbox/Checkbox';
 import Header from '../../../components/Header/Header';
 import PlanCard from '../../../components/PlanCard/PlanCard';
 
@@ -23,6 +24,7 @@ export default function SelectPlan({ plans, onChangePlanMode, isMonthly }) {
       <Button onClick={onChangePlanMode}>
         {isMonthly ? 'Monthly' : 'Yearly'}
       </Button>
+      <Checkbox />
     </>
   );
 }
