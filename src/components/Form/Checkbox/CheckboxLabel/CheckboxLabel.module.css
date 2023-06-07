@@ -1,0 +1,11 @@
+.label {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  color: #9b9ca0;
+}
+
+.active {
+  color: #03295a;
+  cursor: default;
+}

@@ -1,30 +1,58 @@
-import Button from '../../../components/Form/Button/Button';
 import Checkbox from '../../../components/Form/Checkbox/Checkbox';
-import Header from '../../../components/Header/Header';
+import CheckboxLabel from '../../../components/Form/Checkbox/CheckboxLabel/CheckboxLabel';
 import PlanCard from '../../../components/PlanCard/PlanCard';
 
-export default function SelectPlan({ plans, onChangePlanMode, isMonthly }) {
+export default function SelectPlan({
+  plans,
+  onChangePlanMode,
+  onChangeCurrentPlan,
+  isMonthly,
+  currentPlan,
+}) {
   const planList = plans.map((plan, index) => {
     return (
       <li key={index}>
-        <PlanCard isMonthly={isMonthly} {...plan} />
+        <PlanCard
+          onChangeCurrentPlan={onChangeCurrentPlan}
+          isMonthly={isMonthly}
+          currentPlan={currentPlan}
+          {...plan}
+        />
       </li>
     );
   });
 
   return (
     <>
-      <Header
-        title="Select your plan"
-        subtitle="You  have the option of monthly or yearly billing."
-      />
-      <ul style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <ul
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          marginBottom: '45px',
+        }}
+      >
         {planList}
       </ul>
-      <Button onClick={onChangePlanMode}>
-        {isMonthly ? 'Monthly' : 'Yearly'}
-      </Button>
-      <Checkbox />
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '25px',
+        }}
+      >
+        <CheckboxLabel
+          text="Monthly"
+          isMonthly={isMonthly}
+          onChangePlanMode={onChangePlanMode}
+        />
+        <Checkbox onChangePlanMode={onChangePlanMode} isMonthly={isMonthly} />
+        <CheckboxLabel
+          text="Yearly"
+          isMonthly={isMonthly}
+          onChangePlanMode={onChangePlanMode}
+        />
+      </div>
     </>
   );
 }

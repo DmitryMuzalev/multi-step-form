@@ -1,10 +1,14 @@
 import StepLink from '../../components/StepLink/StepLink';
 import styles from './Sidebar.module.scss';
-export default function Sidebar({ steps, currentStep }) {
+export default function Sidebar({ steps, currentStepNumber, selectStep }) {
   const stepsList = steps.map((step, i) => {
     return (
       <li key={i}>
-        <StepLink {...step} currentStep={currentStep} />
+        <StepLink
+          {...step}
+          currentStepNumber={currentStepNumber}
+          selectStep={selectStep}
+        />
       </li>
     );
   });

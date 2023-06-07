@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import Switch from 'react-custom-checkbox/switch';
 
 const checkedTrackStyle = {
@@ -7,47 +6,52 @@ const checkedTrackStyle = {
 };
 
 const checkedIndicatorStyle = {
-  background: '#44aa44',
-  transform: 'translateX(30px)',
+  transform: 'translateX(20px)',
+};
+
+const wrapperStyle = {
+  display: 'inline-block',
+  margin: 0,
+};
+const containerStyle = {
+  cursor: 'pointer',
+  margin: 0,
 };
 
 const indicatorStyle = {
   alignItems: 'center',
-  background: '#f34334',
-  borderRadius: 24,
-  bottom: 2,
+  background: '#ffffff',
+  borderRadius: 6,
+  bottom: 4,
   display: 'flex',
-  height: 24,
+  height: 12,
   justifyContent: 'center',
-  left: 2,
-  outline: 'solid 2px transparent',
+  left: 4,
   position: 'absolute',
   transition: '0.25s',
-  width: 24,
+  width: 12,
 };
 
 const trackStyle = {
-  background: '#e5efe9',
-  border: '1px solid #e6e6e6',
+  background: '#03295A',
   borderRadius: 15,
-  cursor: 'pointer',
   display: 'flex',
-  height: 28,
-  marginRight: 12,
+  height: 20,
   position: 'relative',
-  width: 60,
+  width: 40,
 };
 
-export default function Checkbox() {
-  const [isChecked, setIsChecked] = useState(true);
+export default function Checkbox({ isMonthly, onChangePlanMode }) {
   return (
     <Switch
-      checked={isChecked}
-      onChange={setIsChecked}
+      checked={!isMonthly}
+      onChange={onChangePlanMode}
       trackStyle={trackStyle}
       indicatorStyle={indicatorStyle}
       checkedTrackStyle={checkedTrackStyle}
       checkedIndicatorStyle={checkedIndicatorStyle}
+      wrapperStyle={wrapperStyle}
+      containerStyle={containerStyle}
     />
   );
 }
