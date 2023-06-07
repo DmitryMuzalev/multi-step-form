@@ -1,4 +1,4 @@
-import Switch from 'react-custom-checkbox/switch';
+import CustomSwitch from 'react-custom-checkbox/switch';
 
 const checkedTrackStyle = {
   opacity: 1,
@@ -41,9 +41,9 @@ const trackStyle = {
   width: 40,
 };
 
-export default function Checkbox({ isMonthly, onChangePlanMode }) {
+export default function Switch({ isMonthly, onChangePlanMode }) {
   return (
-    <Switch
+    <CustomSwitch
       checked={!isMonthly}
       onChange={onChangePlanMode}
       trackStyle={trackStyle}

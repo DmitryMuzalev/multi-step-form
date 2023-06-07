@@ -60,6 +60,27 @@ function App() {
       price: { yearly: 150, monthly: 15 },
     },
   ]);
+
+  const [additions] = useState([
+    {
+      id: 1,
+      name: 'Online service',
+      description: 'Access multiplayer games',
+      price: { yearly: 10, monthly: 1 },
+    },
+    {
+      id: 2,
+      name: 'Larger storage',
+      description: 'Extra 1TB of cloud save',
+      price: { yearly: 20, monthly: 2 },
+    },
+    {
+      id: 3,
+      name: 'Customizable profile',
+      description: 'Custom theme on your profile',
+      price: { yearly: 20, monthly: 2 },
+    },
+  ]);
   const [isMonthly, setIsMonthly] = useState(true);
   const [currentPlan, setCurrentPlan] = useState(1);
   const [currentStepNumber, setCurrentStepNumber] = useState(1);
@@ -97,7 +118,7 @@ function App() {
               currentPlan={currentPlan}
             />
           />
-          <Route path="/step3" element=<AddOns /> />
+          <Route path="/step3" element=<AddOns additions={additions} /> />
           <Route path="/step4" element=<Summary /> />
         </Routes>
       </Content>

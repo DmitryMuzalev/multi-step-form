@@ -1,5 +1,5 @@
-import Checkbox from '../../../components/Form/Checkbox/Checkbox';
-import CheckboxLabel from '../../../components/Form/Checkbox/CheckboxLabel/CheckboxLabel';
+import Switch from '../../../components/Form/Switch/Switch';
+import SwitchLabel from '../../../components/Form/Switch/SwitchLabel/SwitchLabel';
 import PlanCard from '../../../components/PlanCard/PlanCard';
 
 export default function SelectPlan({
@@ -41,13 +41,13 @@ export default function SelectPlan({
           gap: '25px',
         }}
       >
-        <CheckboxLabel
+        <SwitchLabel
           text="Monthly"
           isMonthly={isMonthly}
           onChangePlanMode={onChangePlanMode}
         />
-        <Checkbox onChangePlanMode={onChangePlanMode} isMonthly={isMonthly} />
-        <CheckboxLabel
+        <Switch onChangePlanMode={onChangePlanMode} isMonthly={isMonthly} />
+        <SwitchLabel
           text="Yearly"
           isMonthly={isMonthly}
           onChangePlanMode={onChangePlanMode}

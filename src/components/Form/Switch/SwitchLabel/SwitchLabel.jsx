@@ -1,6 +1,6 @@
-import styles from './CheckboxLabel.module.css';
+import styles from './SwitchLabel.module.css';
 
-export default function CheckboxLabel({ text, isMonthly, onChangePlanMode }) {
+export default function SwitchLabel({ text, isMonthly, onChangePlanMode }) {
   const status = text === 'Monthly' ? isMonthly : !isMonthly;
   const classes = [styles.label, status && styles.active].join(' ').trim();
   return (
