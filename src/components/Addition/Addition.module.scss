@@ -1,0 +1,61 @@
+.addition {
+  display: flex;
+  align-items: center;
+  padding: 20px 23px;
+  border: 1px solid #dbdadf;
+  border-radius: 7px;
+
+  input {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #dbdadf;
+    border-radius: 2px;
+    margin: 0px 23px 0px 0px;
+  }
+
+  &__info {
+    flex-grow: 1;
+    padding: 0px 5px 0px 0px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0px 0px 7px 0px;
+  }
+
+  &__description {
+    color: #9b9ca0;
+    font-size: 14px;
+  }
+
+  &__price {
+    font-size: 14px;
+    font-weight: 500;
+    color: #483ffd;
+  }
+}
+
+.checked {
+  border-color: #483ffd;
+  input {
+    position: relative;
+    border-color: #483ffd;
+    background-color: #483ffd;
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Font Awesome 5 Free';
+      font-size: 15px;
+      font-weight: 900;
+      content: '\f00c';
+      color: #ffffff;
+    }
+  }
+}

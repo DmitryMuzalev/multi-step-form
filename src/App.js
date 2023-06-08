@@ -64,19 +64,19 @@ function App() {
   const [additions] = useState([
     {
       id: 1,
-      name: 'Online service',
+      title: 'Online service',
       description: 'Access multiplayer games',
       price: { yearly: 10, monthly: 1 },
     },
     {
       id: 2,
-      name: 'Larger storage',
+      title: 'Larger storage',
       description: 'Extra 1TB of cloud save',
       price: { yearly: 20, monthly: 2 },
     },
     {
       id: 3,
-      name: 'Customizable profile',
+      title: 'Customizable profile',
       description: 'Custom theme on your profile',
       price: { yearly: 20, monthly: 2 },
     },
@@ -118,7 +118,10 @@ function App() {
               currentPlan={currentPlan}
             />
           />
-          <Route path="/step3" element=<AddOns additions={additions} /> />
+          <Route
+            path="/step3"
+            element=<AddOns additions={additions} isMonthly={isMonthly} />
+          />
           <Route path="/step4" element=<Summary /> />
         </Routes>
       </Content>
