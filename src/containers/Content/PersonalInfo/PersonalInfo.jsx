@@ -2,13 +2,18 @@ import style from './PersonalInfo.module.scss';
 
 import { useForm } from 'react-hook-form';
 import Input from '../../../components/Form/Input/Input';
+import { useDate } from '../../AppContext/AppContext';
 
 export default function PersonalInfo() {
+  const { data } = useDate();
+
+  const { userInfo } = { ...data };
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({ mode: 'onBlur' });
+  } = useForm({ mode: 'onBlur', defaultValues: userInfo });
 
   const onSubmit = (data) => {
     console.log(data);
